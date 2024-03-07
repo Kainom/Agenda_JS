@@ -16,6 +16,8 @@ route.get('/login/index',loginController.index);
 
 //rotas de cadastro
 route.get('/cadastro/index',cadastroController.index);
+route.post('/cadastro/register',cadastroController.register);
+
 
 
 //rotas do perfil
