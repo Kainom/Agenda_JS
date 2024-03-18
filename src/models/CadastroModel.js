@@ -4,7 +4,7 @@ const bcryptjs = require("bcryptjs");
 
 const CadastroSchema = new mongoose.Schema({
   email: { type: String, required: true },
-  password: { type: String, require: true }
+  password: { type: String, required: true }
 });
 
 const CadastroModel = mongoose.model('Cadastro', CadastroSchema);
@@ -40,6 +40,25 @@ class Cadastro {
     if (this.user) this.errors.push("Usuário ja existe");
   }
 
+
+  async login() {
+    this.valida();
+    if(this.errors.length > 0) return;
+    this.user = await CadastroModel.findOne({ email: this.body.email });
+
+    if(!this.user) {
+      this.errors.push('Usuário não existe.');
+      return;
+    }
+
+    if(bcryptjs.compareSync(this.body.password, this.user.password)) {
+      this.errors.push('Senha inválida');
+      this.user = null;
+      return;
+  }
+}
+
+  
   async register() {
     this.valida();
     if (this.errors.length > 0){
@@ -55,6 +74,8 @@ class Cadastro {
 
       this.user = await CadastroModel.create(this.body);
   }
+
+
 
 
 }

@@ -1,6 +1,7 @@
 const Cadastro = require("../models/CadastroModel");
 
 exports.index = (req, res) => {
+    if(req.session.user) return res.render("login-logado")
     res.render("cadastro");
 };
 

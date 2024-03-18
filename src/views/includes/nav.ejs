@@ -1,25 +1,29 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/" style="color: blue;">Agenda</a>
-    <a class="navbar-brand ml-5" href="/cadastro/index"  style="color: blue;">Cadastrar</a>
+  <a class="navbar-brand" href="/" style="color: blue;">Agenda</a>
+  <% if (!user){%>
+    <a class="navbar-brand ml-5" href="/cadastro/index" style="color: blue;">Cadastrar</a>
     <a class="navbar-brand ml-5" href="/login/index" style="color: blue;">Login</a>
+    <% } else { %>
+      <a class="navbar-brand ml-5" href="/contato/index" style="color: blue;">Cadastrar contato</a>
+      <% } %>
 
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/contato/index" style="color: blue;">Cadastrar contato</a>
-        </li>
-        <a class="nav-link" href="/perfil/index" style="color: blue;">&#128100;</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
 
-  
-        
-  
-      </ul>
-    </div>
-  </nav>
+            <% if (user){%>
+              <a class="nav-link" href="/login/logout" style="color: blue;">EXIT</a>
+
+              <a class="nav-link" href="/perfil/index" style="color: blue;">&#128100;</a>
+              <%}%>
+
+
+
+          </ul>
+        </div>
+</nav>
