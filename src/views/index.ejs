@@ -1,18 +1,50 @@
 <%- include('includes/head.ejs') %>
-<%- include('includes/nav.ejs') %>
+    <%- include('includes/nav.ejs') %>
 
- <div class="container">
-    <div class="row my-5" >
-        <div class="col-lg-2"></div>
-        
-        <div class="col-lg-8 my-5">
-            <h1 class="display-4 text-center my-5" style="color: blue;">Seja bem vindo!</h1>
-            <p class="text-center lead">Seus contatos estão aqui!</p>
-           
-            <%- include('includes/messages.ejs') %>
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-lg-2"></div>
+
+                <div class="col-lg-8 my-5">
+                    <h1 class="display-4 text-center my-5" style="color: blue;">Seja bem vindo!</h1>
+                    <% if(contatos.length> 0) { %>
+                        <p class="text-center lead">Seus contatos estão aqui!</p>
+                        <div class="responsive-table">
+                            <table class="table my-3">
+                                <tr>
+                                    <% contatos.forEach(contato=> { %>
+                                        <td>
+                                            <%= contato.nome %>
+                                        </td>
+                                        <td>
+                                            <%= contato.sobrenome %>
+                                        </td>
+                                        <td>
+                                            <%= contato.telefone %>
+                                        </td>
+                                        <td>
+                                            <%= contato.email %>
+                                        </td>
+                                        <td> <a href="/contato/index/<%= contato._id %>">Editar</a></td>
+                                        <td> <a class="text-danger"
+                                                href="/contato/delete/<%= contato._id %>">Excluir</a></td>
+                                </tr>
+                                <% }); %>
+                            </table>
+                        </div>
+                        <% }else{ %>
+                            <h1 class="display-4 text-center my-5" style="color: red;">Sem contatos no Momento!</h1>
+                            <div class="cont">
+                                <a class="btnC"
+                                    href="/contato/index">Cadastrar</a>
+
+                                <% } %>
+                                    <%- include('includes/messages.ejs') %>
+                            </div>
+
+                </div>
+
+                <div class="col-lg-2"></div>
+            </div>
         </div>
-        
-        <div class="col-lg-2"></div>
-    </div>
-</div>
-<%- include('includes/footer') %>
+        <%- include('includes/footer') %>

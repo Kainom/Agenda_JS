@@ -9,25 +9,33 @@
                     <div class="row">
 
                         <div class="col-lg">
-                            <h4 class="text-center my-2" style="color: blue;">Faça seu cadastro</h4>
+                            <h4 class="text-center my-2" style="color:#e52bcb;">Faça seu cadastro</h4>
 
                             <form class="form-cadastro" action="/cadastro/register" method="POST">
                                 <input type="hidden" name="_csrf" value=<%=csrfToken %>>
                                 <div class="form-group">
-                                    <label>Seu e-mail</label>
-                                    <input type="email" class="form-control" name="email">
+                                    <label style="color: #e52bcb;">Nome</label>
+                                    <input style="color:#741f68" type="text" class="form-control" style="color: #e52bcb;" name="nome">
+                                  </div>
+                                  <div class="form-group">
+                                    <label style="color: #e52bcb;">Sobrenome</label>
+                                    <input   style="color:#741f68" type="text" class="form-control" name="sobrenome">
+                                  </div>
+                                <div class="form-group">
+                                    <label style="color: #e52bcb;">Seu e-mail</label>
+                                    <input  style="color:#741f68" type="email" class="form-control" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <label>Sua senha</label>
-                                    <input type="password" class="form-control" name="password">
+                                    <label style="color: #e52bcb;">Sua senha</label>
+                                    <input  style="color:#741f68" type="password" class="form-control" name="password">
                                 </div>
                                 <div class="form-group">
-                                    <label>Sua Idade</label>
-                                    <input type="number" class="form-control" name="age" max="130" min="13" value="13">
+                                    <label style="color: #e52bcb;">Sua Idade</label>
+                                    <input  style="color:#741f68" type="number" class="form-control" name="idade" max="130" min="13" value="13">
                                 </div>
                                 <div class="form-group">
-                                    <label>Seu sexo</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <label style="color: #e52bcb;">Seu sexo</label>
+                                    <select style="color:#741f68"  name="sexo" class="form-select" aria-label="Default select example">
                                         <option selected>Omitir</option>
                                         <option value="1">Masculino</option>
                                         <option value="2">Feminino</option>

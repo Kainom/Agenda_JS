@@ -1,1 +1,39 @@
 
+:root{
+    --roxo1:#902bb4;
+}
+span{
+    color: var(--roxo1);
+}
+
+.navColor{
+    color: var(--roxo1) !important;
+}
+
+.cont{
+        display: flex;
+        align-items: center;
+        flex-direction: column !important;
+}
+.cardo{
+    margin-top: 60px !important;
+}
+
+.btnC{
+    text-decoration:none !important;
+    background-color: blue;
+    color:black !important;
+    padding: 15px;
+    border-radius: 15px;
+}
+.btn,.btnC:hover{
+    background-color: black;
+    color: blue;
+    transition:all 0.2s;
+}
+
+.ema{
+    text-decoration: none !important;
+    color: black !important;
+
+}

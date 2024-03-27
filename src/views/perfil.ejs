@@ -1,31 +1,36 @@
 <%- include('includes/head.ejs') %>
-<%- include('includes/nav.ejs') %>
+    <link rel="stylesheet" href="../../frontend/assets/css/style.css">
+    <%- include('includes/nav.ejs') %>
 
- <div class="container">
-    <div class="row">
-        <div class="col-lg-2"></div>
-        
-        <div class="col-lg-8 my-5">
-            <h1 class="display-4 text-center my-3" style="color: blue;">Agenda</h1>
-            <p class="text-center lead">Seus contatos aqui!</p>
-            <div class="row">
-                <div class="col">
-                    <div class="alert alert-danger text-center">Um erro qualquer !</div>
+        <div class="cont">
+            <div class="card cardo" style="width: 18rem;">
+                <img src="../../frontend/assets/img/robotFace.png" class="card-img-top" alt="img">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%=user.nome%>
+                    </h5>
+                    <p class="card-text">Minha Agenda</p>
+                    <a href="#" class="btn btn-primary">CONTATOS</a>
                 </div>
             </div>
-            <div class="reponsive-table">
-                <table class="table my-3">
-                    <tr>
-                        <td>Kainom</td>
-                        <td>Eeltuerio</td>
-                        <td>99941-0467</td>
-                        <td>eleuteriokaina@gmail.com </td>
-                    </tr>
-                </table>
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>Nome: </span>
+                        <%=user.nome%>
+                    </li>
+                    <li class="list-group-item"><span>Sobrenome: </span>
+                        <%=user.sobrenome%>
+                    </li>
+                    <li class="list-group-item"><span>Idade: </span>
+                        <%=user.idade%>
+                    </li>
+                    <li class="list-group-item"><span>Sexo: </span>
+                        <%=user.sexo%>
+                    </li>
+                    <li class="list-group-item"><span>E-mail: </span>
+                        <a class="ema"  href="mailto:<%=user.email%>"><%=user.email%></a>  
+                    </li>
+                </ul>
             </div>
         </div>
-        
-        <div class="col-lg-2"></div>
-    </div>
-</div>
-<%- include('includes/footer') %>
+        <%- include('includes/footer') %>

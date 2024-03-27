@@ -9,19 +9,19 @@
                     <div class="row">
 
                         <div class="col-lg">
-                            <h4 class="text-center my-2" style="color: blue;">Faça seu Login</h4>
+                            <h4 class="text-center my-2" style="color: #e52bcb;">Faça seu Login</h4>
 
                             <form class="form-login" action="/login/login" method="POST">
                                 <input type="hidden" name="_csrf" value=<%=csrfToken %>>
                                 <div class="form-group">
-                                    <label>Seu e-mail</label>
-                                    <input type="email" class="form-control" name="email">
+                                    <label style="color: #e52bcb;" >Seu e-mail</label>
+                                    <input style="color:#741f68" type="email" class="form-control" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <label>Sua senha</label>
-                                    <input type="password" class="form-control" name="password">
+                                    <label style="color: #e52bcb;">Sua senha</label>
+                                    <input style="color:#741f68" type="password" class="form-control" name="password">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Entrar</button>
+                                <button type="submit" class="btn btn-primary" style="color: #e52bcb; background-color: black; border: #741f68;" >Entrar</button>
                             </form>
                        
                         </div>
