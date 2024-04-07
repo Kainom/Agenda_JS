@@ -8,10 +8,10 @@
                 <div class="col-lg-8 my-5">
                     <div class="row">
 
-                        <div class="col-lg">
+                        <div class="col-lg" id="tulkas">
                             <h4 class="text-center my-2" style="color: #e52bcb;">Faça seu Login</h4>
 
-                            <form class="form-login" action="/login/login" method="POST">
+                            <form class="form-login form-valida" action="/login/login" method="POST">
                                 <input type="hidden" name="_csrf" value=<%=csrfToken %>>
                                 <div class="form-group">
                                     <label style="color: #e52bcb;" >Seu e-mail</label>
@@ -21,7 +21,7 @@
                                     <label style="color: #e52bcb;">Sua senha</label>
                                     <input style="color:#741f68" type="password" class="form-control" name="password">
                                 </div>
-                                <button type="submit" class="btn btn-primary" style="color: #e52bcb; background-color: black; border: #741f68;" >Entrar</button>
+                                <button type="submit" class="btn btn-primary" style="color: #e52bcb;" >Entrar</button>
                             </form>
                        
                         </div>

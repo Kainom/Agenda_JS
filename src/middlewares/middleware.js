@@ -1,3 +1,5 @@
+
+
 exports.middlewareGlobal = (req, res, next) => {
   res.locals.errors =  req.flash("errors");
   res.locals.success = req.flash("success");
@@ -11,6 +13,7 @@ exports.outroMiddleware = (req, res, next) => {
 
 exports.checkCsrfError = (err, req, res, next) => {
   if(err) {
+    console.log(err);
     return res.render('404');
   }
 };
@@ -29,3 +32,8 @@ exports.loginRequired = (req, res, next) => {
 
   next();
 };
+
+
+// Step 5 - set up multer for storing uploaded files
+ 
+ 

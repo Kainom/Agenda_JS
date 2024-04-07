@@ -1,6 +1,8 @@
 
 :root{
-    --roxo1:#902bb4;
+    --roxoClaro:#902bb4;
+    --pink:#e52bcb;
+   --roxoEscuro: #741f68;
 }
 span{
     color: var(--roxo1);
@@ -16,24 +18,21 @@ span{
         flex-direction: column !important;
 }
 .cardo{
-    margin-top: 60px !important;
+    margin-top: 30px !important;
 }
 
 .btnC{
     text-decoration:none !important;
-    background-color: blue;
-    color:black !important;
+    background-color: var(--pink);
+    color:#240134 !important;
     padding: 15px;
     border-radius: 15px;
+    
 }
 .btn,.btnC:hover{
-    background-color: black;
-    color: blue;
+    background-color: var(--pink);
+    color: #240134 !important;
     transition:all 0.2s;
+    border: none;
 }
 
-.ema{
-    text-decoration: none !important;
-    color: black !important;
-
-}

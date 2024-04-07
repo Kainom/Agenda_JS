@@ -6,7 +6,8 @@ const cadastroController = require('./src/controllers/cadastroController');
 const perfilController = require('./src/controllers/perfilController');
 const contatoController = require('./src/controllers/contatoController');
 const {loginRequired} = require('./src/middlewares/middleware');
-//const{indexEdit} = require('./src/middlewares/contatoController');
+const pictureController = require('./src/controllers/pictureController');
+const upload = require('./config/multer');
 // Rotas da home
 route.get('/', homeController.index);
 
@@ -23,14 +24,17 @@ route.post('/cadastro/register',cadastroController.register);
 
 
 //rotas do perfil
-route.get('/perfil/index',loginRequired,perfilController.index);
+route.get('/perfil/index',loginRequired,pictureController.findAll,perfilController.index);
+route.get('/perfil/indexo/:id',loginRequired,pictureController.findAll);
+route.delete("perfil/index/:id",loginRequired,pictureController.remove);
+route.post("/perfil/register",loginRequired,upload.single("img"),pictureController.remove,pictureController.create);
 
 //rotas do contato
 
 route.get('/contato/index',loginRequired,contatoController.index);
-
 route.post('/contato/register',loginRequired,contatoController.register);
 route.get('/contato/index/:id', loginRequired, contatoController.editIndex);
 route.post('/contato/edit/:id', loginRequired, contatoController.edit);
 route.get('/contato/delete/:id',loginRequired,contatoController.delete);
+
 module.exports = route;

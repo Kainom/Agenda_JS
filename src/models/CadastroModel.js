@@ -8,7 +8,8 @@ const CadastroSchema = new mongoose.Schema({
   idade: { type: Number, required: true },
   nome: { type: String, required: true },
   sobrenome: { type: String, required: true },
-  sexo: { type: String, required: true }
+  sexo: { type: String, required: true },
+  // imgId:{type: mongoose.Types.ObjectId,required:true}
 });
 
 const CadastroModel = mongoose.model('Cadastro', CadastroSchema);
@@ -38,7 +39,8 @@ class Cadastro {
       idade: this.body.idade,
       nome: this.body.nome,
       sobrenome: this.body.sobrenome,
-      sexo: this.body.sexo
+      sexo: this.body.sexo,
+  //  img:this.body.img
     }
   }
   valida() {
@@ -46,7 +48,7 @@ class Cadastro {
     if (!(validator.isEmail(this.body.email)))
       this.errors.push("E-mail inválido");
     if (this.body.password.length < 3 || this.body.password.length > 50) {
-      this.errors.push("A sennha precisa ter entre 3  e 50 caracteres");
+      this.errors.push("A senha precisa ter entre 3  e 50 caracteres");
     }
 
 

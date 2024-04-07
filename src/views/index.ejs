@@ -6,40 +6,43 @@
                 <div class="col-lg-2"></div>
 
                 <div class="col-lg-8 my-5">
-                    <h1 class="display-4 text-center my-5" style="color: blue;">Seja bem vindo!</h1>
+                    <%- include('includes/messages.ejs') %>
+                    <h1 class="display-4 text-center my-5" style="color:#e52bcb;">Seja bem vindo!</h1>
                     <% if(contatos.length> 0) { %>
-                        <p class="text-center lead">Seus contatos estão aqui!</p>
+                        <p class="text-center lead" style="color:#e52bcb;">Seus contatos estão aqui!</p>
                         <div class="responsive-table">
                             <table class="table my-3">
                                 <tr>
                                     <% contatos.forEach(contato=> { %>
-                                        <td>
+                                        <td style="color:#741f68">
                                             <%= contato.nome %>
                                         </td>
-                                        <td>
+                                        <td style="color:#741f68">
                                             <%= contato.sobrenome %>
                                         </td>
-                                        <td>
+                                        <td style="color:#741f68" >
                                             <%= contato.telefone %>
                                         </td>
-                                        <td>
+                                        <td style="color:#741f68">
                                             <%= contato.email %>
                                         </td>
-                                        <td> <a href="/contato/index/<%= contato._id %>">Editar</a></td>
-                                        <td> <a class="text-danger"
+                                        <td style="color:#741f68">
+                                            <%= contato.numero %>
+                                        </td>
+                                        <td> <a class="edit" style="text-decoration: none; color: darkslateblue;" href="/contato/index/<%= contato._id %>">Editar</a></td>
+                                        <td> <a style="text-decoration: none;" class="text-danger edit"
                                                 href="/contato/delete/<%= contato._id %>">Excluir</a></td>
                                 </tr>
                                 <% }); %>
                             </table>
                         </div>
                         <% }else{ %>
-                            <h1 class="display-4 text-center my-5" style="color: red;">Sem contatos no Momento!</h1>
+                            <h1 class="display-4 text-center my-5" style="color: #d16aff;">Sem contatos no Momento!</h1>
                             <div class="cont">
                                 <a class="btnC"
                                     href="/contato/index">Cadastrar</a>
 
                                 <% } %>
-                                    <%- include('includes/messages.ejs') %>
                             </div>
 
                 </div>

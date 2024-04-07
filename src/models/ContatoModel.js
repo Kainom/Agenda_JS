@@ -4,7 +4,7 @@ const validator = require('validator');
 const ContatoSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   sobrenome: { type: String, required: false, default: "" },
-  numero: { type: Number, required: false, default: "" },
+  numero: { type: String, required: false, default: "" },
   email: { type: String, required: false, default: "" },
   criadoEm: { type: Date, default: Date.now },
   user: { type: String, required: true }

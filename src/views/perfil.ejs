@@ -4,33 +4,51 @@
 
         <div class="cont">
             <div class="card cardo" style="width: 18rem;">
-                <img src="../../frontend/assets/img/robotFace.png" class="card-img-top" alt="img">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <%=user.nome%>
-                    </h5>
-                    <p class="card-text">Minha Agenda</p>
-                    <a href="#" class="btn btn-primary">CONTATOS</a>
-                </div>
+                <!-- http://localhost:3000/images/robotFace.png -->
+                <%if(!src){%>
+                    <img src="http://localhost:3000/images/robotFace.png" alt="">
+                    <%}else{%>
+                        <img src="http://localhost:3000/<%=src%>" class="card-img-top" alt="img">
+                        <%}%>
+                            <!-- http://localhost:3000/uploads/1712336927017.png -->
+                            <div class="card-body">
+                                <h5 style="color:#741f68" class="card-title">
+                                    <%=user.nome%>
+                                </h5>
+                                <form action="/perfil/register?_csrf=<%= csrfToken%> " method="POST"
+                                    enctype="multipart/form-data">
+                                    <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                                    <div class="form-group">
+                                        <label class="btn btn-primary" style="cursor: pointer;" for="fupload"
+                                            class="control-label label-bordered">Selecionar Imagem</label>
+                                        <input hidden id="fupload" type="file" name="img">
+                                        <input class="btn btn-primary" type="submit" value="Upload">
+                                    </div>
+                                </form>
+                            </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span>Nome: </span>
+                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Nome: </span>
                         <%=user.nome%>
                     </li>
-                    <li class="list-group-item"><span>Sobrenome: </span>
+                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sobrenome: </span>
                         <%=user.sobrenome%>
                     </li>
-                    <li class="list-group-item"><span>Idade: </span>
-                        <%=user.idade%>
+                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Idade: </span>
+                        <%=user.idade%> anos
                     </li>
-                    <li class="list-group-item"><span>Sexo: </span>
+                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sexo: </span>
                         <%=user.sexo%>
                     </li>
-                    <li class="list-group-item"><span>E-mail: </span>
-                        <a class="ema"  href="mailto:<%=user.email%>"><%=user.email%></a>  
+                    <li class="list-group-item"><span style="color: #e52bcb;">E-mail: </span>
+                        <a style="color:#741f68" href="mailto:<%=user.email%>"> &nbsp;
+                            <%=user.email%>
+                        </a>
                     </li>
                 </ul>
+                <a href="/" class="btn btn-primary">CONTATOS</a>
+
             </div>
         </div>
         <%- include('includes/footer') %>
