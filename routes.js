@@ -25,7 +25,7 @@ route.post('/cadastro/register',cadastroController.register);
 
 //rotas do perfil
 route.get('/perfil/index',loginRequired,pictureController.findAll,perfilController.index);
-route.get('/perfil/indexo/:id',loginRequired,pictureController.findAll);
+route.get('/perfil/indexEdit',loginRequired,pictureController.findAll,perfilController.indexEdit);
 route.delete("perfil/index/:id",loginRequired,pictureController.remove);
 route.post("/perfil/register",loginRequired,upload.single("img"),pictureController.remove,pictureController.create);
 

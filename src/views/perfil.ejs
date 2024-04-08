@@ -14,17 +14,15 @@
                             <div class="card-body">
                                 <h5 style="color:#741f68" class="card-title">
                                     <%=user.nome%>
+                                    <a href="/perfil/indexEdit"><label class="btn btn-primary"
+                                        style="cursor: pointer;"
+                                        class="control-label label-bordered">Editar</label></a>
                                 </h5>
-                                <form action="/perfil/register?_csrf=<%= csrfToken%> " method="POST"
-                                    enctype="multipart/form-data">
-                                    <input type="hidden" name="_csrf" value=<%=csrfToken %>>
-                                    <div class="form-group">
-                                        <label class="btn btn-primary" style="cursor: pointer;" for="fupload"
-                                            class="control-label label-bordered">Selecionar Imagem</label>
-                                        <input hidden id="fupload" type="file" name="img">
-                                        <input class="btn btn-primary" type="submit" value="Upload">
-                                    </div>
-                                </form>
+                                <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                                <div class="form-group">
+
+                                   
+                                </div>
                             </div>
             </div>
             <div class="card" style="width: 18rem;">

@@ -28,26 +28,38 @@
                             </div>
             </div>
             <div class="card" style="width: 18rem;">
-                <ul class="list-group list-group-flush">
-                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Nome: </span>
-                        <%=user.nome%>
-                    </li>
-                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sobrenome: </span>
-                        <%=user.sobrenome%>
-                    </li>
-                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Idade: </span>
-                        <%=user.idade%> anos
-                    </li>
-                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sexo: </span>
-                        <%=user.sexo%>
-                    </li>
-                    <li class="list-group-item"><span style="color: #e52bcb;">E-mail: </span>
-                        <a style="color:#741f68" href="mailto:<%=user.email%>"> &nbsp;
-                            <%=user.email%>
-                        </a>
-                    </li>
-                </ul>
-                <a href="/" class="btn btn-primary">CONTATOS</a>
+                <form action="form-perfil-edit" method="POST">
+                    <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                    <ul class="list-group list-group-flush">
+                        <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Nome: </span>
+                            <input style="color:#741f68" value="<%= user.nome %>" type="text" class="form-control"
+                                name="nome">
+                        </li>
+                        <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sobrenome:
+                            </span>
+                            <input style="color:#741f68" value="<%= user.sobrenome %>" type="text" class="form-control"
+                                name="sobrenome">
+                        </li>
+                        <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Idade:</span>
+                            <input style="color:#741f68" value="<%= user.idade %>"   max="130" min="13" type="number" class="form-control"
+                           name="idade">
+                        </li>
+                        <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sexo: </span>
+                            <select style="color:#741f68" name="sexo" class="form-select"
+                                aria-label="Default select example">
+                                <option selected>Omitir</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Feminino</option>
+                            </select>
+                        </li>
+                        <li class="list-group-item"><span style="color: #e52bcb;">E-mail: </span>
+                            <input style="color:#741f68" value="<%= user.email %>" type="email" class="form-control"
+                                name="email">
+                        </li>
+                    </ul>
+                    <button type="submit" class="btn btn-primary">Gravar</button>
+                </form>
+                <button type="button" class="btn btn-primary">Voltar</button>
 
             </div>
         </div>
