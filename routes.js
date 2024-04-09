@@ -27,7 +27,7 @@ route.post('/cadastro/register',cadastroController.register);
 route.get('/perfil/index',loginRequired,pictureController.findAll,perfilController.index);
 route.get('/perfil/indexEdit',loginRequired,pictureController.findAll,perfilController.indexEdit);
 route.delete("perfil/index/:id",loginRequired,pictureController.remove);
-route.post("/perfil/register",loginRequired,upload.single("img"),pictureController.remove,pictureController.create);
+route.post("/perfil/register",loginRequired,upload.single("img"),cadastroController.edit,pictureController.remove,pictureController.create);
 
 //rotas do contato
 

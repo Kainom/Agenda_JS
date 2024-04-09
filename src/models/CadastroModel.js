@@ -15,10 +15,11 @@ const CadastroSchema = new mongoose.Schema({
 const CadastroModel = mongoose.model('Cadastro', CadastroSchema);
 
 class Cadastro {
-  constructor(body) {
+  constructor(body,edit) {
     this.body = body;
     this.errors = [];
     this.user = null;
+    this.edit = edit;
   }
   cleanUp() {
     for (const key in this.body) {
@@ -27,9 +28,9 @@ class Cadastro {
       }
     }
     console.log(this.body);
-    if(this.body.sexo === "Omitir"){
+    if (this.body.sexo === "Omitir") {
       this.body.sexo = "Omitido";
-    } else{
+    } else {
       this.body.sexo = (this.body.sexo === "1") ? "Masculino" : "Feminino";
     }
 
@@ -40,17 +41,18 @@ class Cadastro {
       nome: this.body.nome,
       sobrenome: this.body.sobrenome,
       sexo: this.body.sexo,
-  //  img:this.body.img
+
     }
   }
   valida() {
     this.cleanUp();
     if (!(validator.isEmail(this.body.email)))
       this.errors.push("E-mail inválido");
+    if(!this.edit){
     if (this.body.password.length < 3 || this.body.password.length > 50) {
       this.errors.push("A senha precisa ter entre 3  e 50 caracteres");
     }
-
+  }
 
   }
   async userExists() {
@@ -97,13 +99,20 @@ class Cadastro {
     this.user = await CadastroModel.create(this.body);
   }
 
-  async edit(id){
+  async editar(id) {
     if (typeof id !== 'string') return;
-    // this.valida();
+     this.valida();
     if (this.errors.length > 0) return;
-    this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true });
+    this.user = await CadastroModel.findByIdAndUpdate(id, this.body, { new: true });
 
   }
+
+  async buscar(id) {
+    const user = await CadastroModel.findById(id);
+    return user;
+  }
+
+
 
 
 

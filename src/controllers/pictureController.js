@@ -4,7 +4,8 @@ const fs = require("fs");
 
 exports.create = async (req, res) => {
     try {
-        console.log(req.file);                                                                              
+        console.log(req.file);   
+        console.log(req.session.user);                                                                           
         const { originalname } = req.file;
         console.log(originalname + "name");
         const file = req.file;
@@ -23,7 +24,7 @@ exports.create = async (req, res) => {
         await req.session.save(() => res.render("perfil",{src: src.src}));
 
     } catch (error) {
-        console.log(error);
+        console.log(error); 
         res.status(500).json({ message: "Erro ao salvar imagem" });
     }
 }
@@ -43,10 +44,10 @@ exports.findAll = async (req, res,next) => {
 exports.remove = async(req,res,next) => {
     try{
         const picture = await Picture.findByIdAndDelete(req.session.user._id);
-        if(!picture){
+        // if(!picture){
             // return;
-            next();
-        } 
+            // next();
+        // } 
 
         // fs.unlink(src.src);
         // await picture.remove();
