@@ -88,9 +88,13 @@ Contato.buscaPorId = async function (id) {
 Contato.delete = async (id) => {
   if (typeof id !== 'string') return;
   const contato = await ContatoModel.findOneAndDelete({"_id":id});
-  console.log(contato);
   return contato;
 };
+
+Contato.prototype.deleteAll = async function(){
+  const contatos = await ContatoModel.deleteMany({"user":this.user});
+  return contatos;
+}
 
 
 

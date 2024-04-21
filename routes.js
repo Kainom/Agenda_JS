@@ -28,7 +28,7 @@ route.get('/perfil/index',loginRequired,pictureController.findAll,perfilControll
 route.get('/perfil/indexEdit',loginRequired,pictureController.findAll,perfilController.indexEdit);
 route.delete("perfil/index/:id",loginRequired,pictureController.remove);
 route.post("/perfil/register",loginRequired,upload.single("img"),cadastroController.edit,pictureController.remove,pictureController.create);
-
+route.post("/perfil/delete",loginRequired,pictureController.remove,perfilController.deletar);
 //rotas do contato
 
 route.get('/contato/index',loginRequired,contatoController.index);
@@ -36,5 +36,6 @@ route.post('/contato/register',loginRequired,contatoController.register);
 route.get('/contato/index/:id', loginRequired, contatoController.editIndex);
 route.post('/contato/edit/:id', loginRequired, contatoController.edit);
 route.get('/contato/delete/:id',loginRequired,contatoController.delete);
+
 
 module.exports = route;

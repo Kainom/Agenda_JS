@@ -44,13 +44,9 @@ exports.findAll = async (req, res,next) => {
 exports.remove = async(req,res,next) => {
     try{
         const picture = await Picture.findByIdAndDelete(req.session.user._id);
-        // if(!picture){
-            // return;
-            // next();
-        // } 
-
-        // fs.unlink(src.src);
-        // await picture.remove();
+        if(picture)
+        fs.unlink(picture.src,(err)=>{console.log("ELOUUUUU")});
+            // await picture.remove();
         next();
     }catch(err){
         console.log(err);

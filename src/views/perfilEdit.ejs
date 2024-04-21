@@ -5,61 +5,97 @@
         <div class="cont">
             <form action="/perfil/register?_csrf=<%= csrfToken%> " method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_csrf" value=<%=csrfToken %>>
-                <div class="card cardo" style="width: 18rem;">
+                <div class="card cardo" style="width: 25rem;">
                     <!-- http://localhost:3000/images/robotFace.png -->
                     <%if(!src){%>
                         <img src="  http://localhost:3000/images/robotFace.png" alt="">
                         <%}else{%>
-                            <img src="http://localhost:3000/<%=src%>" cylass="card-img-top" alt="img">
+                            <img src="http://localhost:3000/<%=src%>" id="s" alt="img">
                             <%}%>
                                 <!-- http://localhost:3000/uploads/1712336927017.png -->
-                                <div class="card-body">
-                                    <h5 style="color:#741f68" class="card-title">
-                                        <%=user.nome%>
-                                    </h5>
-                                    <div class="form-group">
-                                        <label class="btn btn-primary" style="cursor: pointer;" for="fupload"
-                                            class="control-label label-bordered">Selecionar Imagem</label>
-                                        <input hidden id="fupload" type="file" name="img">
-                                        <input class="btn btn-primary" type="submit" value="Upload">
-                                    </div>
-                                    <!-- </form> -->
-                                </div>
+
                 </div>
-                <div class="card" style="width: 18rem;">
+                <div class="d-flex justify-content-center" style="margin: 0px auto 10px auto">
+                    <label class="btn btn-primary" style="cursor: pointer;" for="fupload"
+                        class="control-label label-bordered">Selecionar Imagem</label>
+                    <input hidden id="fupload" class="fo" type="file" name="img">
+                    <!-- <input class="btn btn-primary" type="submit" value="Upload"> -->
+                </div>
+                <!-- </form> -->
+                <div class="card" style="width: 25rem; border: solid 2px #e52bcb;">
                     <!-- <form action="form-perfil-edit" method="POST"> -->
                     <!-- <input type="hidden" name="_csrf" value=<%=csrfToken %>> -->
-                    <ul class="list-group list-group-flush">
-                        <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Nome: </span>
-                            <input style="color:#741f68" value="<%= user.nome %>" type="text" class="form-control"
-                                name="nome">
+                    <ul class="list-group list-group-flush ">
+                        <li style="color:#741f68;padding-right: 10px;" class="list-group-item ">
+                            <div class="d-flex align-items-center ">
+                                <span class="ms-1 mr-auto p-2" style="color: #e52bcb;">Nome:</span>
+                                <input style="color:#741f68;margin-left: 45px;width: 20em;" value="<%= user.nome %>"
+                                    type="text" class="form-control" name="nome">
+                            </div>
                         </li>
-                        <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sobrenome:
-                            </span>
-                            <input style="color:#741f68" value="<%= user.sobrenome %>" type="text" class="form-control"
-                                name="sobrenome">
+                        <li style="color:#741f68;padding-right: 10px;" class="list-group-item ">
+                            <div class="d-flex align-items-center  justify-content-between">
+                                <span class="mr-auto p-2" style="color: #e52bcb;">Sobrenome:</span>
+                                <input style="color:#741f68;margin-left: 5px; width: 20em;"
+                                    value="<%= user.sobrenome %>" type="text" class="form-control  mr-auto p-2"
+                                    name="sobrenome">
+                            </div>
                         </li>
-                        <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Idade:</span>
-                            <input style="color:#741f68" value="<%= user.idade %>" max="130" min="13" type="number"
-                                class="form-control" name="idade">
+                        <li style="color:#741f68;padding-right: 10px;" class="list-group-item ">
+                            <div class="d-flex align-items-center ">
+                                <span class="mr-auto p-2" style="color: #e52bcb;">Idade:</span>
+                                <input style="color:#741f68;margin-left: 50px;width: 20em;" value="<%= user.idade %>"
+                                    max="130" min="13" type="number" class="form-control mr-auto p-2 " name="idade">
+                            </div>
                         </li>
-                        <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sexo: </span>
-                            <select style="color:#741f68" name="sexo" class="form-select"
-                                aria-label="Default select example">
-                                <option selected>Omitir</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Feminino</option>
-                            </select>
+                        <li style="color:#741f68;padding-right: 10px;" class="list-group-item ">
+                            <div class="d-flex align-items-center  ">
+                                <span class="mr-auto p-2" style="color: #e52bcb;">Email:</span>
+                                <input style="color:#741f68;margin-left: 50px;width: 20em;" value="<%= user.email %>"
+                                    type="email" class="form-control mr-auto p-2" name="email">
+                            </div>
+
                         </li>
-                        <li class="list-group-item"><span style="color: #e52bcb;">E-mail: </span>
-                            <input style="color:#741f68" value="<%= user.email %>" type="email" class="form-control"
-                                name="email">
+                        <li style="color:#741f68;padding-right: 13px; border: 0px solid #e52bcb;"
+                            class="list-group-item ">
+                            <div class="d-flex align-items-center  ">
+                                <span class="mr-auto p-2" style="color: #e52bcb;">Sexo: </span>
+                                <select style="color:#741f68" name="sexo" class="form-select"
+                                    aria-label="Default select example">
+                                    <%if(user.sexo==='Masculino' ){%>
+                                        <option selected><%=user.sexo%></option>
+                                        <option value="Feminino">Feminino</option>
+                                        <option value="Omitir">Omitir</option>
+
+                                        <%}else if (user.sexo==='Feminino' ){%>
+                                            <option selected> <%=user.sexo%></option>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Omitir">Omitir</option>
+                                            <%} else{ %>
+                                            <option selected> <%=user.sexo%></option>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                            <%}%>
+
+                                </select>
+                            </div>
+
                         </li>
                     </ul>
+
+
+
+                </div>
+                <div class="d-flex justify-content-around" style="width: 25rem; margin:14px auto;">
+                    <a href="/perfil/index" style="cursor: pointer;" class="btn btn-primary">Voltar</a>
                     <button type="submit" class="btn btn-primary">Gravar</button>
             </form>
-            <a href="/perfil/index" style="cursor: pointer;" class="btn btn-primary">Voltar</a>
+            <form class="form-deletar" action="/perfil/delete" method="POST">
+                <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                <button type="submit" class="btn btn-primary">Excluir</button>
+            </form>
 
         </div>
+
         </div>
         <%- include('includes/footer') %>

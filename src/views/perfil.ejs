@@ -5,27 +5,17 @@
         <div class="cont">
             <div class="card cardo" style="width: 18rem;">
                 <!-- http://localhost:3000/images/robotFace.png -->
+                <%console.log(src + "Imagem")%>
                 <%if(!src){%>
-                    <img src="http://localhost:3000/images/robotFace.png" alt="">
+                    <img src="http://localhost:3000/images/robotFace.png"  alt="img">
                     <%}else{%>
-                        <img src="http://localhost:3000/<%=src%>" class="card-img-top" alt="img">
+                        <img class="ts" src="http://localhost:3000/<%=src%>" alt="img">
                         <%}%>
                             <!-- http://localhost:3000/uploads/1712336927017.png -->
-                            <div class="card-body">
-                                <h5 style="color:#741f68" class="card-title">
-                                    <%=user.nome%>
-                                    <a href="/perfil/indexEdit"><label class="btn btn-primary"
-                                        style="cursor: pointer;"
-                                        class="control-label label-bordered">Editar</label></a>
-                                </h5>
-                                <input type="hidden" name="_csrf" value=<%=csrfToken %>>
-                                <div class="form-group">
-
-                                   
-                                </div>
-                            </div>
             </div>
-            <div class="card" style="width: 18rem;">
+
+
+            <div class="card corpo" style="width: 18rem;">
                 <ul class="list-group list-group-flush">
                     <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Nome: </span>
                         <%=user.nome%>
@@ -45,8 +35,11 @@
                         </a>
                     </li>
                 </ul>
-                <a href="/" class="btn btn-primary">CONTATOS</a>
 
+            </div>
+            <div class="d-flex justify-content-around"  ">
+                <a href="/" style="margin: 12px 30px auto auto;" class="btn btn-primary ">Contatos</a>
+                <a href="/perfil/indexEdit" class="editar btn btn-primary" style="margin: 12.9px auto auto 10px;">Editar</a>
             </div>
         </div>
         <%- include('includes/footer') %>

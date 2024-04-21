@@ -30,9 +30,9 @@ class Cadastro {
     console.log(this.body);
     if (this.body.sexo === "Omitir") {
       this.body.sexo = "Omitido";
-    } else {
-      this.body.sexo = (this.body.sexo === "1") ? "Masculino" : "Feminino";
-    }
+    }// else {
+    //   this.body.sexo = (this.body.sexo === "1") ? "Masculino" : "Feminino";
+    // }
 
     this.body = {
       email: this.body.email,
@@ -110,6 +110,11 @@ class Cadastro {
   async buscar(id) {
     const user = await CadastroModel.findById(id);
     return user;
+  }
+
+  async delete(id) {
+      await CadastroModel.findOneAndDelete({'_id':id});
+      return true;
   }
 
 

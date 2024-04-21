@@ -12,6 +12,11 @@ span{
     color: var(--roxo1) !important;
 }
 
+.btnEdit{
+    padding-left: 35px;;
+    padding-top: 10px;
+}
+
 .cont{
         display: flex;
         align-items: center;
@@ -19,6 +24,8 @@ span{
 }
 .cardo{
     margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    border-radius: 15px;;
 }
 
 .btnC{
@@ -35,4 +42,25 @@ span{
     transition:all 0.2s;
     border: none;
 }
+
+
+.selecionar{
+    display: flex;
+    margin: auto;
+    background-color: aqua !important;
+}
+
+.editar{
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+
+img{
+    border-radius: 15px;
+}
+
+
 
