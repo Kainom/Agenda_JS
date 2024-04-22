@@ -13,18 +13,21 @@ const contato = new Contato('.form-contato', false);
 const confimar = new Confirmar('.form-deletar');
 const input = document.getElementById("fupload");
 const img = [...document.getElementsByTagName('img')];
-        
+
 const fReader = new FileReader();
 
-if(input.files[0]){
-fReader.readAsDataURL(input.files[0]);
-console.log("opa");
-fReader.onloadend = function(event){
-        const caminho =`./kainom/Pictures/${input.files[0].name}`;
-        console.log(caminho);
-        console.log(img);
-        img[0].src = event.target.result;       
-}}
+input.addEventListener('change', (evt) => {
+        if (!(evt.target && evt.target.files && evt.target.files.length > 0)) {
+                return;
+        }
+
+        fReader.onload = function (event) {
+                img[0].src = fReader.result;
+        }
+        fReader.readAsDataURL(evt.target.files[0]);
+})
+
+
 
 login.validar();
 cadastro.validar();
