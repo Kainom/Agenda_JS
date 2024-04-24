@@ -2,15 +2,15 @@
     <link rel="stylesheet" href="../../frontend/assets/css/style.css">
     <%- include('includes/nav.ejs') %>
 
-        <div class="cont">
-            <form action="/perfil/register?_csrf=<%= csrfToken%> " method="POST" enctype="multipart/form-data">
+        <div  class="cont">
+            <form  class="form-perfil" action="/perfil/register?_csrf=<%= csrfToken%> " method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_csrf" value=<%=csrfToken %>>
-                <div class="card cardo" style="width: 25rem;">
+                <div id="tulkas" class="card cardo" style="width: 25rem;">
                     <!-- http://localhost:3000/images/robotFace.png -->
                     <%if(!src){%>
-                        <img src="  http://localhost:3000/images/robotFace.png" alt="">
+                        <img src="  http://localhost:3000/images/robotFace.png" id="defaultPhoto" alt="">
                         <%}else{%>
-                            <img src="http://localhost:3000/<%=src%>" id="s" alt="img">
+                            <img src="http://localhost:3000/<%=src%>" id="photo" alt="img">
                             <%}%>
                                 <!-- http://localhost:3000/uploads/1712336927017.png -->
 
@@ -22,10 +22,10 @@
                     <!-- <input class="btn btn-primary" type="submit" value="Upload"> -->
                 </div>
                 <!-- </form> -->
-                <div class="card" style="width: 25rem; border: solid 2px #e52bcb;">
+                <div  class="card" style="width: 25rem; border: solid 2px #e52bcb;">
                     <!-- <form action="form-perfil-edit" method="POST"> -->
                     <!-- <input type="hidden" name="_csrf" value=<%=csrfToken %>> -->
-                    <ul class="list-group list-group-flush ">
+                    <ul class="list-group list-group-flush camposPerfil">
                         <li style="color:#741f68;padding-right: 10px;" class="list-group-item ">
                             <div class="d-flex align-items-center ">
                                 <span class="ms-1 mr-auto p-2" style="color: #e52bcb;">Nome:</span>

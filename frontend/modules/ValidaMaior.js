@@ -1,4 +1,4 @@
-import ValidaMenor from "./ValidaMenor"
+import ValidaMenor from "./ValidaMenor";
 
 
 export default class ValidaMaior extends ValidaMenor {
@@ -6,6 +6,7 @@ export default class ValidaMaior extends ValidaMenor {
         super(formClass, senha);
 
     }
+
 
     campoNomeAndSobrenome(el) {
         console.log(this);
@@ -25,7 +26,7 @@ export default class ValidaMaior extends ValidaMenor {
                     `O ${nomeCampo[i]} Precisa ter menos de 50 caracaters`;
                 this.errors.push(tipoDeError);
             }
-            if (campos[i].value.search(/[0-9]/) !== -1) this.errors.push(`${nomeCampo[i]} Não pode conter números`);
+            if (campos[i].value.search(/[0-9]/) !== -1) this.errors.push(`${nomeCampo[i]} não pode conter números`);
         }
         return this.checaErros();
     }
@@ -33,7 +34,7 @@ export default class ValidaMaior extends ValidaMenor {
     events() {
         if (!this.formClass) return;
         this.formClass.addEventListener('submit', e => {
-            e.preventDefault();
+           e.preventDefault();
             const el = e.target;
             this.remove();
             this.camposNull(el);
@@ -42,7 +43,7 @@ export default class ValidaMaior extends ValidaMenor {
             this.testarCampos(e);
         })
     }
-    validar() {
-        this.events();
+    validar(input) {
+        this.events(input);
     }
 }

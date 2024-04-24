@@ -2,34 +2,34 @@ import '../node_modules/core-js/stable';
 import '../node_modules/regenerator-runtime/runtime';
 import './assets/css/style.css';
 
-import Login from './modules/ValidaMenor';
-import Cadastro from './modules/ValidaMaior';
-import Contato from './modules/ValidaMaior';
+import ValidaMenor from './modules/ValidaMenor';
+import ValidaMaior from './modules/ValidaMaior';
 import Confirmar from './modules/Confirmar';
+import VisualizarImg from './modules/VisualizarImg';
 
-const login = new Login('.form-login', true)
-const cadastro = new Cadastro('.form-cadastro', true);
-const contato = new Contato('.form-contato', false);
-const confimar = new Confirmar('.form-deletar');
 const input = document.getElementById("fupload");
-const img = [...document.getElementsByTagName('img')];
-
-const fReader = new FileReader();
-
-input.addEventListener('change', (evt) => {
-        if (!(evt.target && evt.target.files && evt.target.files.length > 0)) {
-                return;
-        }
-
-        fReader.onload = function (event) {
-                img[0].src = fReader.result;
-        }
-        fReader.readAsDataURL(evt.target.files[0]);
-})
+const photo = document.getElementById('photo');
+const login = new ValidaMenor('.form-login', true)
+const cadastro = new ValidaMaior('.form-cadastro', true);
+const contato = new ValidaMaior('.form-contato', false);
+const perfil  = new ValidaMaior('.form-perfil',false);
+const confimar = new Confirmar('.form-deletar');
+const visualizar = new VisualizarImg('.form-perfil',input,photo);
 
 
 
+//visualizar e testar imagem
+visualizar.visualizarImagem();  
+// visualizar.validarImg();
+
+
+//confirmar ação de remoção
+confimar.confirm();
+
+//validar campos 
 login.validar();
 cadastro.validar();
 contato.validar();
-confimar.confirm();
+perfil.validar();
+
+
