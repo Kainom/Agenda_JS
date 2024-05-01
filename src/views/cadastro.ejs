@@ -9,42 +9,45 @@
                     <div class="row">
 
                         <div class="col-lg" id="tulkas">
-                            <h4 class="text-center my-2" style="color:#e52bcb;">Faça seu cadastro</h4>
+                            <h4 class="text-center my-2" style="color: #ff79c6;">Faça seu cadastro</h4>
 
                             <form class="form-cadastro" action="/cadastro/register" method="POST">
                                 <input type="hidden" name="_csrf" value=<%=csrfToken %>>
                                 <div class="form-group">
-                                    <label style="color: #e52bcb;">Nome</label>
-                                    <input style="color:#741f68" type="text" class="form-control"
-                                        style="color: #e52bcb;" name="nome">
+                                    <label style="color: #ff79c6;">Nome</label>
+                                    <input style="color:#e52bcb; background-color:#323949; border: none;" type="text"
+                                        class="form-control" name="nome">
                                 </div>
                                 <div class="form-group">
-                                    <label style="color: #e52bcb;">Sobrenome</label>
-                                    <input style="color:#741f68" type="text" class="form-control" name="sobrenome">
+                                    <label style="color: #ff79c6;">Sobrenome</label>
+                                    <input style="color:#e52bcb; background-color:#323949; border: none;" type="text"
+                                        class="form-control" name="sobrenome">
                                 </div>
                                 <div class="form-group">
-                                    <label style="color: #e52bcb;">Seu e-mail</label>
-                                    <input style="color:#741f68" type="email" class="form-control" name="email">
+                                    <label style="color: #ff79c6;">Seu e-mail</label>
+                                    <input style="color:#e52bcb; background-color:#323949; border: none;" type="email"
+                                        class="form-control" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <label style="color: #e52bcb;">Sua senha</label>
-                                    <input style="color:#741f68" type="password" class="form-control" name="password">
+                                    <label style="color: #ff79c6;">Sua senha</label>
+                                    <input style="color:#e52bcb; background-color:#323949; border: none;"
+                                        type="password" class="form-control" name="password">
                                 </div>
                                 <div class="form-group">
-                                    <label style="color: #e52bcb;">Sua Idade</label>
-                                    <input style="color:#741f68" type="number" class="form-control" name="idade"
-                                        max="130" min="13" value="13">
+                                    <label style="color: #ff79c6;">Sua Idade</label>
+                                    <input style="color:#e52bcb; background-color:#323949; border: none;" type="number"
+                                        class="form-control" name="idade" max="130" min="13" value="13">
                                 </div>
                                 <div class="form-group">
-                                    <label style="color: #e52bcb;">Seu sexo</label>
-                                    <select style="color:#741f68" name="sexo" class="form-select"
-                                        aria-label="Default select example">
+                                    <label style="color: #ff79c6;">Seu sexo</label>
+                                    <select style="color:#e52bcb; background-color:#323949; border: none;" name="sexo"
+                                        class="form-select" aria-label="Default select example">
                                         <option selected>Omitir</option>
                                         <option value="Masculino">Masculino</option>
                                         <option value="Feminino">Feminino</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary">CRIAR CONTA </button>
+                                <button type="submit" class="btn btn-primary">CRIAR CONTA</button>
                             </form>
 
                         </div>

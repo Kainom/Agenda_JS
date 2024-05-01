@@ -57,7 +57,8 @@ export default class ValidaMenor {
         this.errors.forEach((e) => {
             const p = document.createElement("p");
             p.innerHTML = e;
-            p.style.backgroundColor = "#902bb4";
+            p.style.backgroundColor = "#39166d";
+            p.style.color= "#ff79c6";
             p.style.borderRadius = "15px";
             p.classList.add("text-center");
             p.classList.add("my-2");

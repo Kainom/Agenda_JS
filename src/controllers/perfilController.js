@@ -3,7 +3,6 @@ const Contato = require('../models/ContatoModel');
 const fs = require('fs');
 
 exports.index = (req, res) => {
-    console.log(req.pictures);
     let src = null;
     if (req.pictures && fs.existsSync(req.pictures.src))
         src = req.pictures.src;

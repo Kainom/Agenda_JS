@@ -32,7 +32,6 @@ exports.register = async (req, res) => {
 exports.edit = async function (req, res, next) {
     try {
         const cadastro = new Cadastro(req.body,true);
-        console.log(req.session.user +"ude");
         await cadastro.editar(req.session.user._id);
         if (cadastro.errors.length > 0) {
             req.flash("errors", cadastro.errors);
@@ -40,7 +39,6 @@ exports.edit = async function (req, res, next) {
             return;
         }
         const user = await cadastro.buscar(req.session.user._id);
-        console.log(user);
         req.session.user.nome = user.nome;
         req.session.user.sobrenome = user.sobrenome;
         req.session.user.email = user.email;

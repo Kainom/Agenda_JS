@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/" style="color:#902bb4;">Agenda</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #282a36 !important;">
+  <a class="navbar-brand" href="/" style="color:#ff79c6;">Agenda</a>
   <% if (!user){%>
-    <a class="navbar-brand ml-5" href="/cadastro/index" style="color: #902bb4;">Cadastrar</a>
-    <a class="navbar-brand ml-5" href="/login/index" style="color: #902bb4;">Login</a>
+    <a class="navbar-brand ml-5" href="/cadastro/index" style="color: #ff79c6;">Cadastrar</a>
+    <a class="navbar-brand ml-5" href="/login/index" style="color: #ff79c6;;">Login</a>
     <% } else { %>
-      <a class="navbar-brand ml-5" href="/contato/index" style="color:#902bb4;">Cadastrar contato</a>
+      <a class="navbar-brand ml-5" href="/contato/index" style="color:#ff79c6;">Cadastrar contato</a>
       <% } %>
 
 
@@ -17,9 +17,9 @@
           <ul class="navbar-nav ml-auto">
 
             <% if (user){%>
-              <a class="nav-link" href="/login/logout" style="color:#902bb4;">EXIT</a>
+              <a class="nav-link" href="/login/logout" style="color:#ff79c6;">EXIT</a>
 
-              <a class="nav-link" href="/perfil/index" style="color:#902bb4;">&#128100;</a>
+              <a class="nav-link" href="/perfil/index" style="color:#ff79c6;">&#128100;</a>
               <%}%>
 
 

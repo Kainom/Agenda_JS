@@ -12,9 +12,11 @@ const photo = document.getElementById('photo');
 const login = new ValidaMenor('.form-login', true)
 const cadastro = new ValidaMaior('.form-cadastro', true);
 const contato = new ValidaMaior('.form-contato', false);
-const perfil  = new ValidaMaior('.form-perfil',false);
+const perfilEdit  = new ValidaMaior('.form-perfil',false);
 const confimar = new Confirmar('.form-deletar');
 const visualizar = new VisualizarImg('.form-perfil',input,photo);
+
+
 
 
 
@@ -29,7 +31,7 @@ confimar.confirm();
 //validar campos 
 login.validar();
 cadastro.validar();
-contato.validar();
-perfil.validar();
+contato.validar(true);
+perfilEdit.validar();
 
 

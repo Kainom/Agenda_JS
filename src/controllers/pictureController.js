@@ -11,10 +11,7 @@ exports.teste = function (req, res, next) {
 
 exports.create = async (req, res) => {
     try {
-        console.log(req.file);
-        console.log(req.session.user);
         const { originalname } = req.file;
-        console.log(originalname + "name");
         const file = req.file;
         const _id = req.session.user._id;
 
@@ -26,8 +23,6 @@ exports.create = async (req, res) => {
 
         await picture.save();
         const src = await Picture.findById(_id);
-        console.log(file.path);
-        console.log(src.src);
         await req.session.save(() => res.render("perfil", { src: src.src }));
 
     } catch (error) {
@@ -40,7 +35,6 @@ exports.create = async (req, res) => {
 exports.findAll = async (req, res, next) => {
     try {
         const pictures = await Picture.findById(req.session.user._id);
-        console.log(pictures);
         req.pictures = pictures;
         next();
     } catch (error) {

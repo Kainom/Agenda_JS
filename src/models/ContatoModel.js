@@ -64,7 +64,6 @@ Contato.prototype.valida = function () {
 Contato.prototype.buscaQuantidade = async function () {
 
   this.quantidade = await ContatoModel.countDocuments({'user': this.user });
-  console.log(this.quantidade);
   return this.quantidade;
 
 
@@ -74,7 +73,6 @@ Contato.prototype.buscaQuantidade = async function () {
 
 Contato.prototype.buscaContatos = async function () {
   const contatos = await ContatoModel.find({'user':this.user}).sort({criadoEm:-1}); // -1 decrescnte 1 crescente
-  console.log(contatos.length);
   return contatos
 };
   // Métodos estáticos

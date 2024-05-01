@@ -6,8 +6,8 @@
         <div class="col-lg-2"></div>
 
         <div class="col-lg-8 my-3" id="tulkas">
-          <h1 class="text-center" style="color: #e52bcb;">Contato</h1>
-          <p class="text-center lead" style="color: #e52bcb;">Crie ou edite seu contato abaixo.</p>
+          <h1 class="text-center" style="color: #ff79c6;">Contato</h1>
+          <p class="text-center lead" style="color: #ff79c6;">Crie ou edite seu contato abaixo.</p>
 
           <%- include('includes/messages') %>
 
@@ -18,26 +18,26 @@
                     <% } %>
                       <input type="hidden" name="_csrf" value=<%=csrfToken %>>
                       <div class="form-group">
-                        <label style="color: #e52bcb;">Nome</label>
-                        <input style="color:#741f68" value="<%= contato.nome %>" type="text" class="form-control"
-                          name="nome">
+                        <label style="color: #ff79c6;">Nome</label>
+                        <input style="color:#e52bcb; background-color:#323949; border: none;"
+                          value="<%= contato.nome %>" type="text" class="form-control" name="nome">
                       </div>
                       <div class="form-group">
-                        <label style="color: #e52bcb;">Sobrenome</label>
-                        <input style="color:#741f68" value="<%= contato.sobrenome %>" type="text" class="form-control"
-                          name="sobrenome">
+                        <label style="color: #ff79c6;">Sobrenome</label>
+                        <input style="color:#e52bcb; background-color:#323949; border: none;"
+                          value="<%= contato.sobrenome %>" type="text" class="form-control" name="sobrenome">
                       </div>
                       <div class="form-group">
-                        <label style="color: #e52bcb;">Email</label>
-                        <input style="color:#741f68" value="<%= contato.email %>" type="email" class="form-control"
-                          name="email">
+                        <label style="color: #ff79c6;">Email</label>
+                        <input s style="color:#e52bcb; background-color:#323949; border: none;"
+                          value="<%= contato.email %>" type="email" class="form-control" name="email">
                       </div>
                       <div class="form-group">
-                        <label style="color: #e52bcb;">Telefone</label>
-                        <input style="color:#741f68" value="<%= contato.numero %>"  maxlength="13" type="tel" class="form-control"
-                          name="telefone">
+                        <label style="color: #ff79c6;">Telefone</label>
+                        <input style="color:#e52bcb; background-color:#323949; border: none;"
+                          value="<%= contato.numero %>" maxlength="13" type="tel" class="form-control" name="telefone">
                       </div>
-                      <button  type="submit" class="btn btn-primary">Salvar</button>
+                      <button type="submit" class="btn btn-primary">Salvar</button>
                   </form>
 
 

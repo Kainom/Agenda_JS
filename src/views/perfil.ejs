@@ -3,43 +3,46 @@
     <%- include('includes/nav.ejs') %>
 
         <div class="cont">
-            <div class="card cardo" style="width: 18rem;">
-                <!-- http://localhost:3000/images/robotFace.png -->
-                <%console.log(src + "Imagem")%>
+            <div class="card cardo" style="width: 18rem; border:3px double  #e52bcb;">
                 <%if(!src){%>
-                    <img src="http://localhost:3000/images/robotFace.png"  alt="img">
+                    <img src="http://localhost:3000/images/robotFace.png" alt="img">
                     <%}else{%>
                         <img class="ts" src="http://localhost:3000/<%=src%>" alt="img">
                         <%}%>
-                            <!-- http://localhost:3000/uploads/1712336927017.png -->
             </div>
 
 
-            <div class="card corpo" style="width: 18rem;">
+            <div class="card corpo" style="width: 18rem;border: solid 2px #e52bcb;">
                 <ul class="list-group list-group-flush">
-                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Nome: </span>
+                    <li style="color:#e52bcb; background-color:#323949;" class="list-group-item"><span
+                            style="color: #ff79c6;">Nome: </span>
                         <%=user.nome%>
                     </li>
-                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sobrenome: </span>
+                    <li style="color:#e52bcb;background-color:#323949;" class="list-group-item"><span
+                            style="color: #ff79c6;">Sobrenome: </span>
                         <%=user.sobrenome%>
                     </li>
-                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Idade: </span>
+                    <li style="color:#e52bcb;background-color:#323949;" class="list-group-item"><span
+                            style="color: #ff79c6;">Idade: </span>
                         <%=user.idade%> anos
                     </li>
-                    <li style="color:#741f68" class="list-group-item"><span style="color: #e52bcb;">Sexo: </span>
+                    <li style="color:#e52bcb;background-color:#323949;" class="list-group-item"><span
+                            style="color: #ff79c6;">Sexo: </span>
                         <%=user.sexo%>
                     </li>
-                    <li class="list-group-item"><span style="color: #e52bcb;">E-mail: </span>
-                        <a style="color:#741f68" href="mailto:<%=user.email%>"> &nbsp;
+                    <li style="background-color:#323949;" class="list-group-item"><span style="color: #ff79c6;">E-mail:
+                        </span>
+                        <a style="color:#e52bcb;" href="mailto:<%=user.email%>"> &nbsp;
                             <%=user.email%>
                         </a>
                     </li>
                 </ul>
 
             </div>
-            <div class="d-flex justify-content-around"  ">
+            <div class="d-flex justify-content-around">
                 <a href="/" style="margin: 12px 30px auto auto;" class="btn btn-primary ">Contatos</a>
-                <a href="/perfil/indexEdit" class="editar btn btn-primary" style="margin: 12.9px auto auto 10px;">Editar</a>
+                <a href="/perfil/indexEdit" class="editar btn btn-primary"
+                    style="margin: 12.9px auto auto 10px;">Editar</a>
             </div>
         </div>
         <%- include('includes/footer') %>
